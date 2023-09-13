@@ -43,7 +43,18 @@
       </span>
     </h4>
     <h5>Rating: {{ product.rating }}</h5>
-    <button class="mt-4 mb-4 btn btn-success">Add to cart</button>
+    <button
+      class="mt-4 mb-4 btn btn-success me-3"
+      [disabled]="product.stock ? false : true"
+    >
+      Add to cart
+    </button>
+    <span
+      [ngClass]="product.stock ? 'text-success' : 'text-danger'"
+      class="fw-bold"
+    >
+      ({{ product.stock }}) {{ product.stock | stock }}
+    </span>
     <div class="d-flex">
       <span class="me-3">Brand: {{ product.brand }}</span>
       <span>Category: {{ product.category }}</span>
