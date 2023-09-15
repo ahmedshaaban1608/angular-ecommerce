@@ -16,6 +16,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { StockPipe } from './pipes/stock.pipe';
 import { RegularPricePipe } from './pipes/regular-price.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,14 +32,10 @@ import { RegularPricePipe } from './pipes/regular-price.pipe';
     ProductListComponent,
     ProductCardComponent,
     StockPipe,
-    RegularPricePipe
+    RegularPricePipe,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgbModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
