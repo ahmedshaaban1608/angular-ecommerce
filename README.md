@@ -1,27 +1,71 @@
-# EcommerceAngular
+# Angular E-Commerce Application (UI Only)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
+This Angular E-Commerce application is a user interface (UI) implementation without any backend functionality. It allows users to browse a shop page with products fetched from a fake API, navigate through login and registration forms with validation, manage a shopping cart, search for products, and sort products based on title, price, and stock.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Shop Page**:
+  - Display products fetched from a fake API.
+- **Login Page**:
 
-## Code scaffolding
+  - Provide a login form with validation.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Register Page**:
 
-## Build
+  - Provide a registration form with validation.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Cart Page**:
 
-## Running unit tests
+  - Allow users to:
+    - Add products to the cart.
+    - Change quantities of products.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- **Search for Product**:
 
-## Running end-to-end tests
+  - Implement product search functionality.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- **Sort Products**:
+  - Allow users to sort products by:
+    - Title.
+    - Price.
+    - Stock.
 
-## Further help
+## How to Run the Application
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. Clone this repository:
+
+   ```bash
+   git clone https://github.com/ahmedshaaban1608/angular-ecommerce.git
+   ```
+
+2. Install the project dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Run the Angular E-Commerce application:
+
+   ```bash
+   ng serve
+   ```
+
+   The application will be available at `http://localhost:4200/`. Open this URL in your web browser to access the application.
+
+## Project Structure
+
+The project structure follows the Angular best practices and is organized as follows:
+
+- **src/app**:
+  - **components**:
+    - Contains the various Angular components of the application (e.g., shop page, login page, register page, cart page).
+  - **services**:
+    - Contains the services for fetching fake API data and managing cart functionality.
+  - **models**:
+    - Contains the TypeScript interfaces used throughout the application.
+  - **interfaces**:
+    - Contains interfaces for api product and cart product
+
+## License
+
+This Angular E-Commerce application is open-source and available under the [MIT License](LICENSE). Feel free to use, modify, and distribute as per the terms of the license.
