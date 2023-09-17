@@ -1,5 +1,46 @@
-<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+<div class="row mb-5">
+  <div class="col-md-1">
+    <label for="sortProduct" class="fs-4">Sort: </label>
+  </div>
+  <div class="col-lg-3 col-md-5">
+    <select
+      id="sortProduct"
+      class="form-select"
+      [(ngModel)]="sortOption"
+      (change)="sortProducts()"
+    >
+      <option selected disabled>Sort products</option>
+      <option value="title">By Title</option>
+      <option value="minPrice">By Price (Asc)</option>
+      <option value="maxPrice">By Price (Desc)</option>
+      <option value="stock">By Stock</option>
+    </select>
+  </div>
+  <div class="offset-lg-4 col-md-1">
+    <label for="sortProduct" class="fs-4">Search: </label>
+  </div>
+  <div class="col-lg-3 col-md-5">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="search product"
+      [(ngModel)]="searchText"
+      (change)="searchProductsByKeyword()"
+    />
+  </div>
+</div>
+
+<div
+  class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"
+  *ngIf="productArr.length"
+>
   <div class="col" *ngFor="let product of productArr">
     <app-product-card [product]="product"></app-product-card>
   </div>
+</div>
+<div class="pt-5 text-center" *ngIf="!productArr.length">
+  <h2 style="color: #999">
+    We can't find any products related to your search <br />
+    please try again
+  </h2>
 </div>

@@ -17,7 +17,7 @@ import { ProductCardComponent } from './product-card/product-card.component';
 import { StockPipe } from './pipes/stock.pipe';
 import { RegularPricePipe } from './pipes/regular-price.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +40,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NgbModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

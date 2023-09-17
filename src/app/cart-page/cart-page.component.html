@@ -1,1 +1,64 @@
-<p>cart-page works!</p>
+<div class="pt-5 text-center" *ngIf="!cartList.length">
+  <h2 class="pt-5" style="font-size: 4em; color: #999">
+    your Cart list is empty
+  </h2>
+  <button class="btn btn-primary mt-3" routerLink="/">Continue shopping</button>
+</div>
+<div class="container mt-5" *ngIf="cartList.length">
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="card">
+        <div class="card-header">Shopping Cart</div>
+        <div class="card-body">
+          <!-- Cart items -->
+          <div class="row" *ngFor="let product of cartList">
+            <div class="col-3">
+              <img
+                [src]="product.thumbnail"
+                [alt]="product.title"
+                style="max-height: 120px"
+                class="img-fluid pb-3 ps-2 w-100"
+              />
+            </div>
+            <div class="col-6">
+              <h5>{{ product.title }}</h5>
+              <p>{{ product.price * product.quantity | currency : " EGP " }}</p>
+            </div>
+            <div class="col-3">
+              <button
+                class="btn btn-primary"
+                (click)="increaseProductQuantity(product.id)"
+              >
+                +
+              </button>
+              <span class="px-3">{{ product.quantity }} </span>
+              <button
+                class="btn btn-primary"
+                (click)="decreaseProductQuantity(product.id)"
+              >
+                -
+              </button>
+              <button
+                class="btn btn-danger btn-sm mt-2"
+                (click)="removeProductFromCart(product.id)"
+              >
+                Remove
+              </button>
+            </div>
+          </div>
+          <!-- Additional cart items go here -->
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="card">
+        <div class="card-header">Order Summary</div>
+        <div class="card-body">
+          <p>Total products: {{ cartList.length }}</p>
+          <p>Total price: {{ totalPrice | currency : " EGP " }}</p>
+          <button class="btn btn-primary btn-block">Proceed to Checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

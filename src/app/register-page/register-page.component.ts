@@ -14,7 +14,7 @@ import {
 })
 export class RegisterPageComponent {
   submitRegister() {
-    console.log(this.registerForm);
+    console.log(this.registerForm.value);
   }
   registerForm!: FormGroup;
   constructor(private fb: FormBuilder) {
@@ -58,6 +58,7 @@ export class RegisterPageComponent {
       ],
     });
   }
+
   confirmPasswordValidator(control: AbstractControl): ValidationErrors | null {
     const password = this.registerForm?.get('password')?.value;
     const confirmPassword = control.value;

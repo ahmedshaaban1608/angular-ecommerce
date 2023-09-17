@@ -14,7 +14,7 @@
   <div class="card-body position-relative">
     <div class="d-flex justify-content-between mb-2">
       <span class="bg-primary text-white pe-2 ps-2 rounded-3">
-        {{ product.price | currency : " EGP " }}
+        {{ product.price | currency : "EGP " }}
       </span>
       <span
         [ngClass]="product.stock ? 'text-success' : 'text-danger'"
@@ -34,11 +34,19 @@
     <a class="fw-bold text-primary" routerLink="product/{{ product.id }}">
       Read More
     </a>
-    <a class="p-0 ps-3 pe-3 btn btn-success rounded-5">Add to cart</a>
+    <a
+      class="p-0 ps-3 pe-3 btn btn-success rounded-5"
+      (click)="addProductToCart()"
+      *ngIf="!isInCart && product.stock"
+      >Add to cart</a
+    >
+    <a class="p-0 ps-3 pe-3 btn btn-danger rounded-5" *ngIf="isInCart"
+      >Added to cart</a
+    >
   </div>
   <div class="card-footer justify-content-between d-flex">
     <small class="text-muted">
-      {{ product.createdAt | date : "MMMM YYYY" }}
+      {{ product.brand }}
     </small>
     <small class="text-muted fw-bold"> {{ product.category }} </small>
   </div>
