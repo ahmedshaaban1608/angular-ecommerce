@@ -68,4 +68,4 @@ The project structure follows the Angular best practices and is organized as fol
 
 ## License
 
-This Angular E-Commerce application is open-source and available under the [MIT License](LICENSE). Feel free to use, modify, and distribute as per the terms of the license.
+This Angular E-Commerce application is open-source and available. Feel free to use, modify, and distribute as per the terms of the license.
