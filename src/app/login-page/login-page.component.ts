@@ -6,6 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./login-page.component.css'],
 })
 export class LoginPageComponent {
-  submitLogin(form: any) {
-  }
+  submitLogin(form: any) {}
 }

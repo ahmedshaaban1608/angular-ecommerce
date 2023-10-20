@@ -29,8 +29,6 @@ export class SingleProductComponent {
         this.titleService.setTitle(this.product['title']);
         this.cartService.getCartList().subscribe((data) => {
           const productInCart = data.find((p) => p.id === this.product.id);
-          console.log(productInCart);
-
           this.isInCart = productInCart ? true : false;
         });
       },

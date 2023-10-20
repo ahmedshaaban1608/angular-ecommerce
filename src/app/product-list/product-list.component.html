@@ -32,13 +32,13 @@
 
 <div
   class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"
-  *ngIf="productArr.length"
+  *ngIf="productArr?.length"
 >
   <div class="col" *ngFor="let product of productArr">
     <app-product-card [product]="product"></app-product-card>
   </div>
 </div>
-<div class="pt-5 text-center" *ngIf="!productArr.length">
+<div class="pt-5 text-center" *ngIf="!productArr?.length">
   <h2 style="color: #999">
     We can't find any products related to your search <br />
     please try again
